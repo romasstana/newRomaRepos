@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<ResponseDto> updateUser(RequestDto requestDto){
+    public ResponseEntity<ResponseDto> updateUser(@Valid RequestDto requestDto){
         boolean isUpdated = userService.updateUser(requestDto);
         if (!isUpdated)
             return new ResponseEntity<>(ResponseDto.builder()
